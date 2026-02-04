@@ -1,29 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
     <script src="app.js"></script>
-    <title>Document</title>
+    <title>Gestor de Usuarios</title>
 </head>
-<body>
-    <a href="/obtenerUsuario">Obtener Usuarios</a>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <!-- Encabezado -->
+                <div class="text-center mb-5">
+                    <h1 class="display-4">Gestor de Usuarios</h1>
+                    <p class="lead text-muted">Administra tus usuarios de manera fácil y rápida</p>
+                </div>
 
-    <form action="/agregarUsuario" method="post">
-    <input type="text" name="nombre" placeholder="Nombre de Usuario">
-    <input type="submit" value="Agregar Usuario">
-    
-  </form>
+                <!-- Botón para obtener usuarios -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ver Usuarios</h5>
+                        <p class="card-text text-muted">Consulta la lista completa de usuarios registrados</p>
+                        <a href="/obtenerUsuario" class="btn btn-primary btn-lg">
+                            <i class="bi bi-list"></i> Obtener Usuarios
+                        </a>
+                    </div>
+                </div>
 
-   
-   <br>
-   <br>
-   <form action="/borrarUsuario" method="post">
-    <input type="text" name="id" placeholder="Ingresa el id">
-    <input type="submit" value="Borrar Usuario">
-   </form>
+                <div class="row">
+                    <!-- Formulario Agregar Usuario -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0">Agregar Usuario</h5>
+                            </div>
+                            <div class="card-body">
+                                <form action="/agregarUsuario" method="post">
+                                    <div class="form-group">
+                                        <label for="nombre">Nombre de Usuario</label>
+                                        <input type="text" 
+                                               class="form-control form-control-lg" 
+                                               id="nombre" 
+                                               name="nombre" 
+                                               placeholder="Ingresa el nombre" 
+                                               required>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block btn-lg mt-3">
+                                        ➕ Agregar Usuario
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
-    
-
+                    <!-- Formulario Borrar Usuario -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header bg-danger text-white">
+                                <h5 class="mb-0">Borrar Usuario</h5>
+                            </div>
+                            <div class="card-body">
+                                <form action="/borrarUsuario" method="post">
+                                    <div class="form-group">
+                                        <label for="id">ID del Usuario</label>
+                                        <input type="text" 
+                                               class="form-control form-control-lg" 
+                                               id="id" 
+                                               name="id" 
+                                               placeholder="Ingresa el ID" 
+                                               required>
+                                    </div>
+                                    <button type="submit" class="btn btn-danger btn-block btn-lg mt-3">
+                                        🗑️ Borrar Usuario
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
