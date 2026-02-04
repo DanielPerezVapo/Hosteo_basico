@@ -9,7 +9,7 @@
   
   "scripts": {
   "start": "node app.js",
-  "build": "$ npm run build"
+  "build": "echo 'No build step needed'"
 }
 
 }
