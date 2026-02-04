@@ -10,6 +10,7 @@ var con=mysql.createConnection({
 })
 con.connect();
 
+
 app.use(bodyParser.json())
 
 
